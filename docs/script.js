@@ -31,6 +31,7 @@ document.querySelector(".container").addEventListener("click", (e) => {
     let event = e.target.value;
     if (!event || event === "undefined")
         return;
+    console.log(event);
     if (event === "clear") {
         clearField();
         return;
