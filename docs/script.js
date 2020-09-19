@@ -29,9 +29,6 @@ let calculate = {
 }
 document.querySelector(".container").addEventListener("click", (e) => {
     let event = e.target.value;
-    if (!event || event === "undefined")
-        return;
-    console.log(event);
     if (event === "clear") {
         clearField();
         return;
@@ -54,19 +51,18 @@ document.querySelector(".container").addEventListener("click", (e) => {
         }
         return;
     }
-    if (operation.length === 0) {
+    if (operation.length === 0 && event >= "0" && event <= "9") {
         if (a.length > 10) {
             return;
         }
         a += event;
         display(a);
-    } else {
+    }
+    if (operation.length === 1 && event >= "0" && event <= "9") {
         if (b.length > 10) {
             return;
         }
         b += event;
-
-
         display(a + " " + operation + " " + b);
     }
 });
