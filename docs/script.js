@@ -29,7 +29,7 @@ let calculate = {
 }
 document.querySelector(".container").addEventListener("click", (e) => {
     let event = e.target.value;
-    if (!event)
+    if (!event || event === "undefined")
         return;
     if (event === "clear") {
         clearField();
