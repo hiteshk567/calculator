@@ -29,6 +29,8 @@ let calculate = {
 }
 document.querySelector(".container").addEventListener("click", (e) => {
     let event = e.target.value;
+    if (!event)
+        return;
     if (event === "clear") {
         clearField();
         return;
